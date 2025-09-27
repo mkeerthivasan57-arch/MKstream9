@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MKstream - Admin</title>
+<link rel="stylesheet" href="style.css">
+<script defer src="script.js"></script>
+</head>
+<body class="theme-dark">
+  <div class="site-root">
+    <header class="site-header">
+      <div class="left"><a href="index.html" class="text-btn">Home</a></div>
+      <div class="center"><h1>Admin Panel</h1></div>
+    </header>
+
+    <main class="container admin-container">
+      <section class="admin-section">
+        <h2>Authentication</h2>
+        <div class="form-row">
+          <input id="admin-pass" type="password" class="input" placeholder="Admin password (default 'admin123')">
+          <button id="admin-login" class="btn">Login</button>
+        </div>
+        <div id="admin-status" class="small">Not authenticated</div>
+        <hr>
+        <h3>Change Password</h3>
+        <div class="form-row">
+          <input id="change-pass-old" type="password" class="input" placeholder="Old password">
+          <input id="change-pass-new" type="password" class="input" placeholder="New password">
+          <button id="change-pass-btn" class="btn">Change Password</button>
+        </div>
+      </section>
+
+      <section class="admin-section">
+        <h2>Category Manager</h2>
+        <div class="form-row">
+          <input id="new-cat" class="input" placeholder="New category name">
+          <button id="add-cat" class="btn">Add Category</button>
+        </div>
+        <div id="cats-list" class="small"></div>
+      </section>
+
+      <section class="admin-section">
+        <h2>Subcategory Manager</h2>
+        <div class="form-row">
+          <select id="cat-for-sub" class="input" title="Parent Category"></select>
+          <input id="new-sub" class="input" placeholder="New subcategory name">
+          <button id="add-sub" class="btn">Add Subcategory</button>
+        </div>
+        <div id="subs-list" class="small"></div>
+      </section>
+      
+      <section class="admin-section">
+        <h2>Content Uploader (Video Editor)</h2>
+        <div class="form-row">
+          <select id="form-category" class="input" title="Category"></select>
+          <select id="form-subcategory" class="input" title="Subcategory"></select>
+        </div>
+        <div class="form-row">
+          <input id="form-series-title" class="input" placeholder="Series Title">
+        </div>
+        <div class="form-row">
+          <input id="form-thumbnail" class="input" placeholder="Thumbnail URL (or JPG link)">
+        </div>
+        <hr>
+        <h3>Episode Details</h3>
+        <div class="episode-row">
+          <input id="form-ep-number" class="input" placeholder="Episode Number (e.g., 1)">
+          <input id="form-ep-name" class="input" placeholder="Episode Name (e.g., The Beginning)">
+        </div>
+        <div class="form-row">
+          <input id="form-version" class="input" placeholder="Version (e.g., Original, Hindi Dubbed)">
+        </div>
+        <h4>Servers (Source/Link or Embedded Code)</h4>
+        <div id="server-list-input">
+          </div>
+        <div class="form-row"><button id="add-server-btn" class="btn">+ Add Server</button></div>
+        <h4>Subtitles (.vtt, .srt URL)</h4>
+        <div id="subtitle-list-input">
+          </div>
+        <div class="form-row"><button id="add-subtitle-btn" class="btn">+ Add Subtitle</button></div>
+        <div class="form-row"><button id="upload-content" class="btn">Save & Upload Content</button></div>
+      </section>
+      
+      <section class="admin-section">
+        <h2>Ads & Global Servers Manager</h2>
+        <div class="form-row"><textarea id="ads-header" class="input" placeholder="Header/Global Ad code (HTML)"></textarea></div>
+        <div class="form-row"><textarea id="ads-player" class="input" placeholder="Player overlay ad code (HTML)"></textarea></div>
+        <div class="form-row"><textarea id="global-servers" class="input" placeholder='Global servers JSON (optional)'></textarea></div>
+        <div class="form-row"><button id="save-ads" class="btn">Save Ads & Servers</button></div>
+      </section>
+
+      <section class="admin-section">
+        <h2>Web Editor & SEO</h2>
+        <div class="form-row"><input id="site-name" class="input" placeholder="Site name"><input id="site-logo" class="input" placeholder="Logo URL"></div>
+        <div class="form-row">
+          <label class="small">Header color<input id="site-color-header" type="color" class="input"></label>
+          <label class="small">Background color<input id="site-color-bg" type="color" class="input"></label>
+          <label class="small">Card color<input id="site-color-card" type="color" class="input"></label>
+          <label class="small">Accent color<input id="site-color-accent" type="color" class="input"></label>
+        </div>
+        <div class="form-row"><input id="seo-title" class="input" placeholder="SEO Title"><input id="seo-desc" class="input" placeholder="SEO Description"><button id="save-seo" class="btn">Save SEO</button></div>
+      </section>
+
+      <section class="admin-section">
+        <h2>Maintenance</h2>
+        <div class="form-row"><button id="reset-site" class="btn">Reset site (clear localStorage)</button></div>
+      </section>
+    </main>
+
+    <footer class="site-footer"><div class="container small">MKstream Admin © <span id="year-admin">2025</span>.</div></footer>
+  </div>
+</body>
+</html>
