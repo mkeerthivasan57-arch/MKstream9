@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MKstream - Player</title>
+<meta name="description" id="meta-desc-pl" content="Player page">
+<link rel="stylesheet" href="style.css">
+<script defer src="script.js"></script>
+</head>
+<body class="theme-dark">
+  <div class="site-root">
+    <header class="site-header">
+      <div class="left">
+        <button id="hamburger-pl" class="hamburger" aria-label="menu" aria-expanded="false"><span></span><span></span><span></span></button>
+        <div class="brand" onclick="location.href='index.html'">MKstream</div>
+      </div>
+      <div class="right"><a class="admin-pill" href="admin.html">Admin</a></div>
+    </header>
+
+    <main class="container">
+      <div id="player-wrap" class="player-wrap">
+        <h2 id="player-title">Series Title</h2>
+
+        <div class="player-controls top-controls">
+          <select id="version-select" class="input" title="Version"></select>
+          <select id="server-select" class="input" title="Server"></select>
+          <select id="quality-select" class="input" title="Quality"></select>
+          <select id="subtitle-select" class="input" title="Subtitle"></select>
+          <button id="download-video" class="btn">Download</button>
+        </div>
+
+        <div id="video-container" class="video-container">
+          <video id="video-player" class="video" controls crossorigin playsinline></video>
+        </div>
+        
+        <h3>Episodes</h3>
+        <div id="episode-ranges" class="episode-ranges"></div>
+        <div id="episode-list" class="episode-list"></div>
+
+        <div id="related" class="related"></div>
+      </div>
+    </main>
+
+    <footer class="site-footer"><div class="container small">MKstream © <span id="year-pl">2025</span>. All rights reserved.</div></footer>
+  </div>
+</body>
+</html>
